@@ -107,7 +107,7 @@ public class NiceUnitEditText extends EditText {
         }
         if (ignoreCeText && text.length() > 0) {
             if (text.toString().endsWith(unitText)) {
-                result = text.subSequence(0, text.length() - 1);
+                result = text.subSequence(0, text.length() - unitText.length());
             }
         }
         return (Editable) result;
