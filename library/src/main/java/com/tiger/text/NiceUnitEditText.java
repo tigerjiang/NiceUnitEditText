@@ -9,6 +9,7 @@ import android.text.Spanned;
 import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.EditText;
 
 
@@ -90,10 +91,14 @@ public class NiceUnitEditText extends EditText {
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
         super.onSelectionChanged(selStart, selEnd);
-        if (!getText().toString().isEmpty() && selEnd == getText().toString().length()) {
-            setSelection(getText().toString().length() - unitText.length());
-        } else {
-            setSelection(selStart);
+        try {
+            if (!getText().toString().isEmpty() && selEnd == getText().toString().length()) {
+                setSelection(getText().toString().length() - unitText.length());
+            } else {
+                setSelection(selStart);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

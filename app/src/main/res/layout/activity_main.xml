@@ -12,9 +12,7 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="需支付1000元"
-        android:text="1000"
-        android:inputType="number"
+        android:inputType="text"
         app:unit_ignore="true"
         app:unit_text="人民币"
         app:unit_text_color="@color/colorPrimary"/>
